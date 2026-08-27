@@ -1,14 +1,20 @@
-import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from 'react-native';
+import {
+  HititZebraPrinterEmitter,
+  checkStatus as zebraCheckStatus,
+  connect as zebraConnect,
+  disconnect as zebraDisconnect,
+  discoverPrinters as zebraDiscover,
+  print as zebraPrint
+} from 'hitit-zebra-printer';
+import { PermissionsAndroid, Platform } from 'react-native';
 
-const { ZebraPrinterModule } = NativeModules;
+export const printerEmitter = HititZebraPrinterEmitter;
 
-export const printerEmitter = new NativeEventEmitter(ZebraPrinterModule);
-
-export const discoverPrinters = () => ZebraPrinterModule.discoverPrinters();
-export const connectPrinter = (mac: string) => ZebraPrinterModule.connect(mac);
-export const printZpl = (data: string) => ZebraPrinterModule.print(data);
-export const checkPrinterStatus = () => ZebraPrinterModule.checkStatus();
-export const disconnectPrinter = () => ZebraPrinterModule.disconnect();
+export const discoverPrinters = () => zebraDiscover();
+export const connectPrinter = (mac: string) => zebraConnect(mac);
+export const printZpl = (data: string) => zebraPrint(data);
+export const checkPrinterStatus = () => zebraCheckStatus();
+export const disconnectPrinter = () => zebraDisconnect();
 
 const requestBluetoothPermissions = async () => {
   if (Platform.OS === 'android' && Platform.Version >= 31) {
