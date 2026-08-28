@@ -1,14 +1,14 @@
+import { PermissionsAndroid, Platform } from 'react-native';
 import {
-  HititZebraPrinterEmitter,
+  SerbestZebraPrinterEmitter,
   checkStatus as zebraCheckStatus,
   connect as zebraConnect,
   disconnect as zebraDisconnect,
   discoverPrinters as zebraDiscover,
   print as zebraPrint
-} from 'hitit-zebra-printer';
-import { PermissionsAndroid, Platform } from 'react-native';
+} from 'serbest-zebra-printer-module';
 
-export const printerEmitter = HititZebraPrinterEmitter;
+export const printerEmitter = SerbestZebraPrinterEmitter;
 
 export const discoverPrinters = () => zebraDiscover();
 export const connectPrinter = (mac: string) => zebraConnect(mac);

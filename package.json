@@ -20,7 +20,6 @@
     "expo-symbols": "~1.0.8",
     "expo-system-ui": "~6.0.9",
     "expo-web-browser": "~15.0.11",
-    "hitit-zebra-printer": "file:../../Users/murat.serbest/Desktop/hitit-zebra-printer/hitit-zebra-printer-0.1.0.tgz",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
@@ -32,6 +31,7 @@
     "react-native-thermal-pos-printer": "^1.6.6",
     "react-native-web": "~0.21.0",
     "react-native-worklets": "0.5.1",
+    "serbest-zebra-printer-module": "file:../../Users/murat.serbest/Desktop/serbest-zebra-printer-module/serbest-zebra-printer-module-0.1.0.tgz",
     "with-rn-bluetooth-classic": "^1.0.5",
     "zustand": "^5.0.14"
   },
